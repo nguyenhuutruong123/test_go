@@ -1,0 +1,154 @@
+
+--rancher
+https://rancher.yes4all.internal/dashboard/auth/login?timed-out
+dev
+abcd@#123456
+
+--jenkins
+http://jenkins-new.yes4all.internal/job/APPS-PROD/job/it-poms/
+truongnh
+123321
+
+--PIMS
+jdbc:postgresql://172.30.104.6:5432/pims
+pims_ro / k0s3bU6h5KpP
+ 
+--PIMS STRAGE
+jdbc:postgresql://172.30.104.6:5432/pims_stg
+pims_stg / k0s3bU6h5KpP
+
+-- PIMS TEST
+    url: jdbc:postgresql://172.30.12.126:5432/pims_test
+    username: pims_test
+    password: jw8s0F4
+
+--poms/
+172.30.104.97
+poms_ro / YnAxk668pUR8
+
+--poms stage
+url: jdbc:postgresql://172.30.104.3:5432/poms_stg
+    username: poms_stg
+    password: XKpbocVJ51K4
+
+--http://logs.yes4all.internal/app/home
+core_services / abcd@1234
+
+--DOCKER
+./mvnw package -Pdev verify jib:dockerBuild
+ docker-compose -f src/main/docker/app.yml up
+
+--LINK LOG KAFKA
+http://kafdrop.test.yes4all.internal/ 
+
+--chatgpt
+truongnh208@gmail.com
+Nguyenhuutruong1
+
+--postgres datamart
+y4a_it_truongnh
+ASNA!120jd120j
+
+-- off màu output console
+spirng:
+ output:
+    ansi:
+      enabled: NEVER
+	  
+-- add certificate for java 
+
+keytool -import -alias test -keystore "C:\Program Files\Eclipse Adoptium\jdk-11.0.16.8-hotspot\lib\security\cacerts
+" -file D:\certificate_aup\au-ops.crt
+pass: changeit
+
+--backend 3 prod
+172.30.12.114 port 3306
+it_truongnh_ro
+UY!s912lkj23
+yes4all_besystem
+
+-- link get clientid gmail
+https://console.cloud.google.com/apis/dashboard?pli=1&project=feedback-auth
+
+--grafana
+--http://grafana.yes4all.internal/d/k8s_views_pods/kubernetes-views-pods?orgId=1&refresh=30s&var-datasource=Prometheus&var-namespace=it-pims&var-pod=product-sync-api-64f6cd6c96-qfzk4&var-resolution=30s
+truongnh / 123321
+
+-- db backend3 test
+'hostname' => '172.30.12.128', 
+  'username' => 'duynguyen', 
+  'password' => 'duydeptrai', 
+  'database' => 'yes4all_besystem'
+  
+  -- LINK TEST PLM
+  https://test-nika.gonika.top/
+  https://test-api.gonika.top
+  
+  --user rabbit mq test
+  http://rabbitmq.test.yes4all.internal/#/
+  pub_user_test / dHY5eg2FRe31 / RW
+  
+  -- user rabbit mq prod
+  rabbitmq:
+    host: rabbitmq-102-14.yes4all.internal
+    port: 5672
+    username: pub_user
+    password: fIFz128TmFra
+  -- IMPLEMENT ELATICSEARCH
+  PRODUCT-SYNC-DA
+  
+  -- save file to byte[]
+   Branch: test-file (POMS)
+
+--mail POMS
+QaPT6XdqhMaP8uB>123
+poms@yes4all.info
+
+
+--CONFIG KEYCLOAK PHAN QUYEN USER THEO GROUP
+B1: TAO GROUP MEMER TREN CLIENT
+B2: TAO ROLE THEO TÊN GROUP TRONG TAB ROLE CỦA CLIENT
+B3: ADD ROLE MỚI TẠO VÀO CLIENT ROLE "PROFILE"
+B4: ADD ROLE CỦA CLIENT VÀO GROUP
+
+Bước 1: Tạo Client Scope
+
+Đăng nhập vào giao diện quản trị của Keycloak.
+Chọn Realm (vùng) mà bạn muốn thực hiện cấu hình này.
+Trong menu bên trái, chọn "Client Scopes" (Phạm vi client).
+Chọn nút "Create" (Tạo) để tạo một phạm vi client mới.
+Đặt tên cho phạm vi client, ví dụ: "OneClientScope" (hoặc bất kỳ tên nào bạn muốn).
+Chọn các "Protocol" (Giao thức) mà bạn muốn áp dụng cho phạm vi client, chẳng hạn như "openid-connect".
+Lưu lại phạm vi client.
+Bước 2: Cấu hình Group Membership cho Client Scope
+
+Trên trang chi tiết của phạm vi client vừa tạo, chọn tab "Mappers" (Bộ ánh xạ).
+Chọn "Create" (Tạo) để thêm một bộ ánh xạ mới.
+Trong danh sách các bộ ánh xạ có sẵn, chọn "Group Membership" (Thành viên nhóm).
+Điền các thông tin sau:
+Name (Tên): Nhập một tên mô tả cho bộ ánh xạ, ví dụ: "OneClientScope Group Mapper" (Bộ ánh xạ nhóm cho phạm vi client duy nhất).
+Mapper Type (Loại bộ ánh xạ): Chọn "Group Membership" (Thành viên nhóm).
+Token Claim Name: Để trống (mặc định là "groups").
+Add to ID token: Chọn "ON" nếu bạn muốn bổ sung thông tin nhóm vào token ID.
+Add to access token: Chọn "ON" nếu bạn muốn bổ sung thông tin nhóm vào token truy cập.
+Add to userinfo: Chọn "ON" nếu bạn muốn bổ sung thông tin nhóm vào thông tin người dùng.
+Single Group Attribute: Chọn "ON" để chỉ bao gồm một nhóm trong token.
+Full Group Path: Chọn "OFF" nếu bạn chỉ muốn bao gồm tên nhóm (không bao gồm đường dẫn đầy đủ).
+Group Path Separator: Nếu bạn chọn "OFF", bạn có thể đặt dấu phân cách cho tên nhóm (mặc định là "/").
+Lưu lại bộ ánh xạ.
+Bước 3: Cấu hình Client Role
+
+Chọn "Clients" (Các Client) từ menu bên trái.
+Chọn Client mà bạn muốn giới hạn nhóm người dùng đăng nhập vào.
+Trên trang chi tiết của Client, chọn tab "Roles" (Vai trò).
+Chọn "Add Role" (Thêm vai trò) để tạo một vai trò mới cho client này, ví dụ: "OneClientRole" (hoặc bất kỳ tên nào bạn muốn).
+Lưu lại vai trò.
+Bước 4: Gán Client Role cho Group
+
+Chọn "Groups" (Nhóm) từ menu bên trái.
+Chọn nhóm mà bạn muốn giới hạn để chỉ có thể truy cập vào một client cụ thể.
+Trên trang chi tiết của nhóm, chọn tab "Role Mappings" (Ánh xạ vai trò).
+Chọn client mà bạn muốn giới hạn (Client mà bạn đã tạo ở Bước 3).
+Trong phần "Available Roles" (Vai trò có sẵn), chọn vai trò mà bạn đã tạo ở Bước 3 ("OneClientRole").
+Chọn nút "Add selected" (Thêm đã chọn) để gán vai trò cho nhóm.
+Lưu lại thay đổi.
